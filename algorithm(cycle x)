@@ -1,0 +1,49 @@
+// 일단 이게 사이클 없을 때 시작지 도착지 (A~J) 입력, 거리 입력
+import heapq
+
+def find_path_with_exact_distance(graph, start, end, target_distance):
+    # 우선순위 큐 초기화 (누적 거리, 현재 노드, 경로)
+    queue = [(0, start, [start])]
+    valid_paths = []
+
+    while queue:
+        current_distance, current_node, path = heapq.heappop(queue)
+
+        # 목표 거리 이상인 경우에만 경로를 기록
+        if current_node == end and current_distance >= target_distance:
+            valid_paths.append((path, current_distance))
+
+        # 인접 노드 탐색
+        for neighbor, weight in graph[current_node]:
+            distance = current_distance + weight
+
+            # 목표 거리에 도달할 때까지 계속 탐색
+            if distance <= target_distance or neighbor == end:
+                heapq.heappush(queue, (distance, neighbor, path + [neighbor]))
+
+    # 결과 반환
+    if valid_paths:
+        return valid_paths
+    else:
+        print("목표 거리를 충족하는 경로가 없습니다.")
+        return None
+
+# 예제 그래프 정의
+graph = {
+    'A': [('B', 5), ('C', 10)],
+    'B': [('A', 5), ('C', 15), ('D', 10)],
+    'C': [('A', 10), ('B', 15), ('D', 5)],
+    'D': [('B', 10), ('C', 5)]
+}
+
+# 시작 노드, 목표 노드, 목표 거리 설정
+start = 'A'
+end = 'D'
+target_distance = 20
+
+# 알고리즘 실행
+paths = find_path_with_exact_distance(graph, start, end, target_distance)
+if paths:
+    print("목표 거리 이상의 경로들:")
+    for path, distance in paths:
+        print("경로:", path, "거리:", distance)
