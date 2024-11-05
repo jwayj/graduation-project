@@ -1,0 +1,67 @@
+//이게 출발지=도착지일 경우 출발 엣지(A~J) 선택하고 거리 입력하면 모든 경로 출력하는 코드
+import heapq
+import random
+
+def generate_random_graph(nodes, min_weight=0.1, max_weight=10):
+    """무작위 가중치로 그래프를 생성합니다."""
+    graph = {}
+    for node in nodes:
+        graph[node] = []
+        for neighbor in nodes:
+            if node != neighbor:
+                weight = round(random.uniform(min_weight, max_weight), 1)
+                graph[node].append((neighbor, weight))
+    return graph
+
+def find_circular_paths_with_distance_range(graph, start, target_distance, tolerance=0.5):
+    # 허용 범위 설정
+    min_distance = target_distance - tolerance
+    max_distance = target_distance + tolerance
+
+    # 우선순위 큐 초기화 (누적 거리, 현재 노드, 경로)
+    queue = [(0, start, [start])]
+    valid_paths = []
+
+    while queue:
+        current_distance, current_node, path = heapq.heappop(queue)
+
+        # 순환 경로 조건: 출발지로 돌아왔고 거리 조건을 만족하는 경우 기록
+        if current_node == start and min_distance <= current_distance <= max_distance and len(path) > 1:
+            valid_paths.append((path, current_distance))
+
+        # 인접 노드 탐색
+        for neighbor, weight in graph[current_node]:
+            distance = current_distance + weight
+
+            # 거리 초과하지 않는 한 경로 확장
+            if distance <= max_distance:
+                heapq.heappush(queue, (distance, neighbor, path + [neighbor]))
+
+    # 결과 반환
+    if valid_paths:
+        return valid_paths
+    else:
+        print("지정한 거리 범위 내에서 순환 경로가 없습니다.")
+        return None
+
+# 예제 그래프 생성
+nodes = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+graph = generate_random_graph(nodes)
+
+# 사용자 입력 처리
+try:
+    start_node = input("출발할 노드를 입력하세요: ").strip().upper()
+    if start_node not in nodes:
+        raise ValueError("유효하지 않은 노드입니다.")
+    target_distance = float(input("걷고자 하는 거리(km)를 입력하세요: "))
+except ValueError as e:
+    print(e)
+    target_distance = None
+
+if target_distance:
+    # 시작 노드와 거리 설정 (순환 경로)
+    paths = find_circular_paths_with_distance_range(graph, start_node, target_distance)
+    if paths:
+        print(f"{target_distance}km에 근접한 순환 경로들:")
+        for path, distance in paths:
+            print("경로:", path, "거리:", distance)
