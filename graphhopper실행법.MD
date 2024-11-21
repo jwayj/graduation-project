@@ -1,3 +1,5 @@
+# window에서 graphhopper 실행
+
 cd C:/Users/dabii/git/graphhopper
 
 java -Ddw.graphhopper.datareader.file=berlin-latest.osm.pbf -jar web/target/graphhopper-web-*.jar server config-example.yml
@@ -14,3 +16,22 @@ java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web
 
 
  http://localhost:8989/
+
+
+------------------------------------
+
+#ubuntu에서 graphhopper 실행법
+cd /mnt/c/Users/dabii/git/graphhopper
+
+
+java -jar graphhopper-web-4.0.jar server config.yml
+
+*yml 파일 변경 시
+
+rm -rf graph-cache/
+
+java -jar web/target/graphhopper-web-11.0-SNAPSHOT.jar import config.yml
+
+
+*서버 실행
+
