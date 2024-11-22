@@ -1,4 +1,4 @@
-#window에서 하든 ubuntu에서 하든 config-example.yml에 road-access 추가해야 함!!
+# window에서 하든 ubuntu에서 하든 config-example.yml에 road-access 추가해야 함!!
 # window에서 graphhopper 실행
 
 cd C:/Users/dabii/git/graphhopper
@@ -21,7 +21,8 @@ java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web
 
 ------------------------------------
 
-#ubuntu에서 graphhopper 실행법
+# ubuntu에서 graphhopper 실행법
+
 cd graphhopper
 
 java -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-*.jar server config-example.yml
