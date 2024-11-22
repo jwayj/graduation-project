@@ -56,8 +56,11 @@ Common Name (e.g. server FQDN or YOUR name) []:172.25.168.177
 Email Address []:dabiih@ewhain.net
 
 -> 인증서 common name 172.25.168.177
-->인증서 .p12 저장 비밀번호는 631422
+
+-> 인증서 .p12 저장 비밀번호는 631422
+
 -----------------------
+
 * config-example.yml 파일 수정
 
 nano ~/graphhopper/config-example.yml
