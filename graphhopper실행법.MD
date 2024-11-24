@@ -29,6 +29,13 @@ java -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target
 
 *이때 config-example.yml 수정은 nano ~/graphhopper/config-example.yml
 
+*만약 window에 있는 폴더를 실행시키는 거라면
+
+cd mnt/Users/dabii/git/graphhopper
+
+java -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-*.jar server config-example.yml
+
+
 -----------------------------
 # http가 아닌 https로 바꾸는 경우(현재위치 탐색 위해)
 java -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar ~/graphhopper/web/target/graphhopper-web-*.jar server ~/graphhopper/config-example.yml
