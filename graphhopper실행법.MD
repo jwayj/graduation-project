@@ -1,6 +1,6 @@
 # window에서 하든 ubuntu에서 하든 config-example.yml에 road-access 추가해야 함!!
 
-*mvn install -DskipTests
+* mvn install -DskipTests
 
 # window에서 graphhopper 실행
 
