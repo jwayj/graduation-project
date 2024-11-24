@@ -8,7 +8,7 @@ cd C:/Users/dabii/git/graphhopper
 
 java -Ddw.graphhopper.datareader.file=berlin-latest.osm.pbf -jar web/target/graphhopper-web-*.jar server config-example.yml
 
-*위 코드는 베를린 지도 기준
+* 위 코드는 베를린 지도 기준
 
 **south korea 링크
 
@@ -30,9 +30,9 @@ cd graphhopper
 
 java -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-*.jar server config-example.yml
 
-*이때 config-example.yml 수정은 nano ~/graphhopper/config-example.yml
+* 이때 config-example.yml 수정은 nano ~/graphhopper/config-example.yml
 
-*만약 window에 있는 폴더를 실행시키는 거라면
+* 만약 window에 있는 폴더를 실행시키는 거라면
 
 cd mnt/Users/dabii/git/graphhopper
 
@@ -49,7 +49,7 @@ java -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar ~/graphhop
 
 nano ~/graphhopper/config-example.yml
 
-**server: application_connectors 수정
+** server: application_connectors 수정
 
 https://172.25.168.177:8989/maps/?profile=car&layer=OpenStreetMap
 
