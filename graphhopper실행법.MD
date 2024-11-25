@@ -16,11 +16,11 @@ https://download.geofabrik.de/asia/south-korea.html
 
 위 링크에서 south-korea-latest.osm.pbf 받았으면 아래의 명령어로 바꾸어 실행
 
-java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-11.0-SNAPSHOT.jar server config-example.yml
+java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-10.0-SNAPSHOT.jar server config-example.yml
 
-*만약 yml 파일을 수정했다면
+* 만약 yml 파일을 수정했다면
 
-java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-11.0-SNAPSHOT.jar import config-example.yml
+java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-10.0-SNAPSHOT.jar import config-example.yml 으로 import를 한번 해줘야 함
 
 
 
