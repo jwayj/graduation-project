@@ -18,6 +18,11 @@ https://download.geofabrik.de/asia/south-korea.html
 
 java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-11.0-SNAPSHOT.jar server config-example.yml
 
+*만약 yml 파일을 수정했다면
+
+java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-11.0-SNAPSHOT.jar import config-example.yml
+
+
 
  http://localhost:8989/
 
