@@ -1,3 +1,17 @@
+# graphhopper 실행법 최최종
+
+cd (자기 graphhopper 위치)
+
+java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-10.0-SNAPSHOT.jar server config-example.yml
+
+만일, osm.pbf 파일을 수정했다면 아래 코드 실행 한번 해줘야 함
+
+java -Xmx4g -Ddw.graphhopper.datareader.file=south-korea-latest.osm.pbf -jar web/target/graphhopper-web-10.0-SNAPSHOT.jar import config-example.yml
+
+
+
+------------------------
+
 # window에서 하든 ubuntu에서 하든 config-example.yml에 road-access 추가해야 함!!
 
 * mvn install -DskipTests
