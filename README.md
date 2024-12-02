@@ -27,7 +27,7 @@
 | 팀 그라운드룰 | https://github.com/jwayj/graduation-project/blob/main/Ground_Rule.MD |
 
 
-# 관련 링크
+# 🔗 관련 링크
 
 우리 팀이 수정 중인 오픈 소스 코드
 
