@@ -1,7 +1,7 @@
 1. Example 폴더 안에 GeoJsonExporter.java SaveGeoJson.java geojson_map.html 세 개의 파일을 추가(별도로 올려놓겠음)
 2. RoutingExample의 main 메소드에 아래 코드를 추가(hopper.close(); 코드 위에 추가함)
 
-ResponsePath path = routing(hopper);
+        ResponsePath path = routing(hopper);
         String geoJson = GeoJsonExporter.toGeoJSON(path);
         System.out.println("GeoJSON:\n" + geoJson);
 
