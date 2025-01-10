@@ -13,9 +13,13 @@
         }
 
 3.RoutingExample의 routing 메소드의 void형식을 ResponsePath로, 마지막줄에 return rsp.getBest(); 추가함
+
 4.https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer 링크 접속해서 설치
+
 5.RoutingExample을 실행, 성공적으로 실행되면 마지막에 'GeoJSON saved to route.geojson'이라는 문구가 뜨면서 graphhopper 최상위 위치에 route.geojson이라는 이름의 파일이 생성되어 있을거임
+
 6.이 json파일을 example파일로 옮기기
+
 7.vscode의 html파일을 우클릭하면 Open with Live Server클릭해서 열면 지도에 표시되어있음(그냥 폴더에 있는 html파일로 열면 표시가 안되어서 이렇게 함)
 
 수정해야 할 것
