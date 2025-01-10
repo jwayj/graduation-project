@@ -17,3 +17,7 @@ ResponsePath path = routing(hopper);
 5.RoutingExample을 실행, 성공적으로 실행되면 마지막에 'GeoJSON saved to route.geojson'이라는 문구가 뜨면서 graphhopper 최상위 위치에 route.geojson이라는 이름의 파일이 생성되어 있을거임
 6.이 json파일을 example파일로 옮기기
 7.vscode의 html파일을 우클릭하면 Open with Live Server클릭해서 열면 지도에 표시되어있음(그냥 폴더에 있는 html파일로 열면 표시가 안되어서 이렇게 함)
+
+수정해야 할 것
+1. geoJson 파일이 example폴더 안에 저장되도록 코드 수정
+2. 출발지, 도착지를 입력받는 페이지를 만들어서 확인버튼을 누르면 웹에서 geoJson 파일 생성->바로 반영해서 지도에 띄우도록 구현?
