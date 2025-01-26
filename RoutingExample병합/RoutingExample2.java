@@ -19,7 +19,7 @@ import com.graphhopper.routing.util.EdgeFilter;
 import com.graphhopper.storage.index.LocationIndex;
 import com.graphhopper.storage.index.Snap;
 
-public class RoutingExample {
+public class RoutingExample2 {
 
     public static void main(String[] args) {
         String relDir = args.length == 1 ? args[0] : "";
