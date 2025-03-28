@@ -32,14 +32,7 @@
 | 항목 | 내용 |
 |:---  |---  |
 | (1) 요구사항 정의 | **🔹 사용자 요구사항 (User Requirements)**<br>1. 사용자는 원하는 러닝 **거리(km)**를 입력할 수 있어야 한다.<br>2. 사용자는 경로의 **경사도 선호도(예: 평탄/언덕 있음)**를 선택할 수 있어야 한다.<br>3. 사용자는 **출발지와 목적지 좌표**를 선택할 수 있어야 하며, 동일 위치여도 경로 탐색이 가능해야 한다.<br>4. 러닝 후 사용자는 **피드백(좋았던 점/불편한 점)**을 입력할 수 있어야 한다.<br>5. 사용자는 **기록된 경로, 거리, 시간, 페이스** 등의 러닝 히스토리를 조회할 수 있어야 한다.<br>6. 특정 경로를 **반복해서 러닝하거나 공유**할 수 있어야 한다.<br>7. 일정 조건(예: 거리 달성, 특정 경로 완주 등) 달성 시 **뱃지를 획득**할 수 있어야 한다.<br><br>**🔹 시스템 요구사항 (System Requirements)**<br>- **경로 추천 알고리즘**은 GraphHopper 기반으로 동작하며, 사용자 요구(거리, 경사도)에 맞는 경로를 생성해야 함<br>- **Feedback 처리 엔진**은 사용자의 피드백을 반영하여 경로 가중치를 조정하고, 추천 결과를 점진적으로 개선해야 함<br>- **DB**에는 사용자 정보, 경로 데이터, 피드백, 러닝 기록, 뱃지 획득 현황 등이 저장되어야 함<br>- 시스템은 **웹 기반 UI**를 통해 사용자에게 직관적인 인터페이스를 제공해야 하며, 경로 지도는 Leaflet 또는 유사한 지도 라이브러리 기반으로 시각화<br><br>**🔹 기능 유스케이스 (Use Case 예시)**<br> - UC-01: 사용자 등록/로그인 → 계정을 생성하고 로그인하여 개인화된 기능 사용 가능<br> - UC-02: 경로 탐색 → 거리, 경사도, 출발지/목적지에 따른 경로 탐색<br> - UC-03: 러닝 기록 저장 → 경로, 시간, 거리, 페이스 등의 러닝 정보 저장<br> - UC-04: 피드백 입력 → 러닝 종료 후 피드백 입력 가능<br> - UC-05: 경로 가중치 업데이트 → 피드백을 바탕으로 경로 추천 알고리즘 가중치 조정<br> - UC-06: 뱃지 획득 → 조건 충족 시 뱃지 부여 |
-| (2) 전체 시스템 구성 | **🔹 전체 시스템 구조**<br>아래는 RunPT 시스템의 전체 흐름 구조이며, 사용자와 각 소프트웨어 모듈의 관계를 포함한다:<br><br>
-[사용자]<br>
-&nbsp;&nbsp;↓<br>
-[프론트엔드 (Android 앱, Kotlin)]<br>
-&nbsp;&nbsp;↓<br>
-[Firebase SDK로 직접 통신]<br>
-&nbsp;&nbsp;↙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↘<br>
-[Firestore / Realtime DB]  [Storage / Authentication / Cloud Functions]<br><br>
+| (2) 전체 시스템 구성 | **🔹 전체 시스템 구조**<br>아래는 RunPT 시스템의 전체 흐름 구조이며, 사용자와 각 소프트웨어 모듈의 관계를 포함한다:<br><br>[사용자]<br> &nbsp;&nbsp;↓<br>[프론트엔드 (Android 앱, Kotlin)]<br> &nbsp;&nbsp;↓<br> [Firebase SDK로 직접 통신]<br> &nbsp;&nbsp;↙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↘<br> [Firestore / Realtime DB]  [Storage / Authentication / Cloud Functions] <br><br>
 
 **🔹 소프트웨어 모듈 및 역할**<br>
 - **사용자 (러너)**: 원하는 거리/경사/출발지/목적지를 입력하고, 경로를 따라 러닝하며 피드백을 제공함<br>
