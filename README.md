@@ -6,7 +6,7 @@
 <!-- "내용"에 해당하는 부분을 지우고, 여러분 과제의 내용을 작성해 주세요. -->
 
 # Team-Info
-| (1) 과제명 | *Graphhopper와 Multi-Factor Route Optimization Algorithm을 이용한 러너 맞춤형 경로 추천 서비스*
+| (1) 과제명 | *Multi-Factor Route Optimization Algorithm을 이용한 러너 맞춤형 경로 추천 서비스*
 |:---  |---  |
 | (2) 팀 번호 / 팀 이름 | *18-코드의 정상화* |
 | (3) 팀 구성원 | 좌연주 (2271059): 리더, *BE, FE, AI* <br> 최서연 (2076410): 팀원, *BE, FE, AI* <br> 성은재 (2176181) : 팀원, *BE, FE, AI*			 |
